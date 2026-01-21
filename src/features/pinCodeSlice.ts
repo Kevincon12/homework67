@@ -16,8 +16,22 @@ export const codeSlice = createSlice({
                 state.enteredPin += action.payload;
             }
         },
+
         removeCode(state) {
             state.enteredPin = state.enteredPin.slice(0, -1);
+        },
+
+        checkPin(state) {
+            if (state.enteredPin === '1337') {
+                state.status = "success";
+            } else {
+                state.status = "error";
+            }
+        },
+
+        resetCode(state) {
+            state.enteredPin = '';
+            state.status = "idle";
         },
     }
 });
