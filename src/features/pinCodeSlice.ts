@@ -15,8 +15,10 @@ export const codeSlice = createSlice({
             if (state.enteredPin.length < 4) {
                 state.enteredPin += action.payload;
             }
-        }
-
+        },
+        removeCode(state) {
+            state.enteredPin = state.enteredPin.slice(0, -1);
+        },
     }
 });
 
