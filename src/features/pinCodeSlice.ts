@@ -1,7 +1,6 @@
 import type {PinCodeState} from "../types";
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 
-
 const initialState: PinCodeState = {
     enteredPin: '',
     status: "idle",
@@ -37,3 +36,5 @@ export const codeSlice = createSlice({
 });
 
 export const codeReducer = codeSlice.reducer;
+export const { addCode, removeCode, checkPin, resetCode } = codeSlice.actions;
+export default codeSlice.reducer;
